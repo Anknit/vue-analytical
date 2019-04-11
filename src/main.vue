@@ -11,7 +11,7 @@
       </div>
       <div class="col-md-10 right-panel">
         <div class="row">
-          <div class="col-md-4 col-md-offset-4">
+          <div class="col-md-6 col-md-offset-3">
             <method-form ref="method-form" v-on:methodAdded="updateMethods"></method-form>
           </div>
         </div>
