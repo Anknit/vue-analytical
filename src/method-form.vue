@@ -22,14 +22,14 @@
             <div class="form-group">
               <span class="required-mark">*</span>
               <label class="control-label">LOD (in ppm)</label>
-              <input type="number" class="form-control" v-model="form[form.residueType].lod" required min="0" />
+              <input type="number" step="any" class="form-control" v-model="form[form.residueType].lod" required min="0" />
             </div>
           </div>
           <div class="col-xs-12 col-md-6">
             <div class="form-group">
               <span class="required-mark">*</span>
               <label class="control-label">LOQ (in ppm)</label>
-              <input type="number" class="form-control" v-model="form[form.residueType].loq" required min="0" />
+              <input type="number" step="any" class="form-control" v-model="form[form.residueType].loq" required min="0" />
             </div>
           </div>
         </div>
@@ -63,14 +63,14 @@
                     <div class="form-group">
                       <span class="required-mark">*</span>
                       <label class="control-label">Solvent Quantity (ml)</label>
-                      <input type="number" min="0" class="form-control" v-model="form[form.residueType].swab.solventQuantity" required />
+                      <input type="number" step="any" min="0" class="form-control" v-model="form[form.residueType].swab.solventQuantity" required />
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <span class="required-mark">*</span>
                   <label class="control-label">Default Recovery (%)</label>
-                  <input type="number" class="form-control" v-model="form[form.residueType].swab.recovery" required min="0" max="100" />
+                  <input type="number" step="any" class="form-control" v-model="form[form.residueType].swab.recovery" required min="0" max="100" />
                 </div>
                 <div v-if="!form[form.residueType].swab.moc || !form[form.residueType].swab.moc.length">
                   <div class="block-btn add-btn" role="button" @click="addMoc('swab')">
@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-xs-3">
                       <div class="form-group">
-                        <input type="number" v-model="material.recovery" class="form-control" required min="0" max="100" />
+                        <input type="number" step="any" v-model="material.recovery" class="form-control" required min="0" max="100" />
                       </div>
                     </div>
                     <div class="col-xs-2">
@@ -145,7 +145,7 @@
                 <div class="form-group">
                   <span class="required-mark">*</span>
                   <label class="control-label">Default Recovery (%)</label>
-                  <input type="number" class="form-control" v-model="form[form.residueType].rinse.recovery" required min="0" max="100" />
+                  <input type="number" step="any" class="form-control" v-model="form[form.residueType].rinse.recovery" required min="0" max="100" />
                 </div>
                 <div v-if="!form[form.residueType].rinse.moc || !form[form.residueType].rinse.moc.length">
                   <div class="block-btn add-btn" role="button" @click="addMoc('rinse')">
@@ -177,7 +177,7 @@
                     </div>
                     <div class="col-xs-3">
                       <div class="form-group">
-                        <input type="number" v-model="material.recovery" min="0" max="100" class="form-control" required/>
+                        <input type="number" step="any" v-model="material.recovery" min="0" max="100" class="form-control" required/>
                       </div>
                     </div>
                     <div class="col-xs-2">
@@ -225,14 +225,14 @@
             <div class="form-group">
               <span class="required-mark">*</span>
               <label class="control-label">TNTC Limit (in CFU)</label>
-              <input type="number" class="form-control" v-model="form[form.residueType].TNTClimit" required min="0" />
+              <input type="number" step="any" class="form-control" v-model="form[form.residueType].TNTClimit" required min="0" />
             </div>
           </div>
           <div class="col-xs-12 col-md-6">
             <div class="form-group">
               <span class="required-mark">*</span>
               <label class="control-label">TFTC Limit (in CFU)</label>
-              <input type="number" class="form-control" v-model="form[form.residueType].TFTClimit" required min="0" />
+              <input type="number" step="any" class="form-control" v-model="form[form.residueType].TFTClimit" required min="0" />
             </div>
           </div>
         </div>
@@ -270,7 +270,7 @@
                     <div class="form-group">
                       <span class="required-mark">*</span>
                       <label class="control-label">Default Recovery (%)</label>
-                      <input type="number" class="form-control" v-model="form[form.residueType].swab.recovery" required min="0" max="100" />
+                      <input type="number" step="any" class="form-control" v-model="form[form.residueType].swab.recovery" required min="0" max="100" />
                     </div>
                   </div>
                 </div>
@@ -304,7 +304,7 @@
                     </div>
                     <div class="col-xs-3">
                       <div class="form-group">
-                        <input type="number" v-model="material.recovery" class="form-control" required min="0" max="100" />
+                        <input type="number" step="any" v-model="material.recovery" class="form-control" required min="0" max="100" />
                       </div>
                     </div>
                     <div class="col-xs-2">
@@ -365,7 +365,7 @@
                     <div class="form-group">
                       <span class="required-mark">*</span>
                       <label class="control-label">Default Recovery (%)</label>
-                      <input type="number" class="form-control" v-model="form[form.residueType].rinse.recovery" required min="0" max="100" />
+                      <input type="number" step="any" class="form-control" v-model="form[form.residueType].rinse.recovery" required min="0" max="100" />
                     </div>
                   </div>
                 </div>
@@ -399,7 +399,7 @@
                     </div>
                     <div class="col-xs-3">
                       <div class="form-group">
-                        <input type="number" v-model="material.recovery" class="form-control" required min="0" max="100"/>
+                        <input type="number" step="any" v-model="material.recovery" class="form-control" required min="0" max="100"/>
                       </div>
                     </div>
                     <div class="col-xs-2">
@@ -491,9 +491,19 @@ export default {
         } else {
           storedData = JSON.parse(storedData)
         }
-        storedData[this.form.analyticalId] = this.form
+        let methodData = {
+          analyticalId:this.form.analyticalId,
+          residueType: this.form.residueType,
+          reason: this.form.reason,
+          api:{},
+          cleaning_agent:{},
+          bioburden:{},
+          endotoxin:{},
+        }
+        methodData[this.form.residueType] = this.form[this.form.residueType]
+        storedData[methodData.analyticalId] = methodData
         window.localStorage.setItem('ana-methods', JSON.stringify(storedData));
-        this.$emit('methodAdded',this.form)
+        this.$emit('methodAdded',methodData)
         this.resetForm()
         alert('Method Saved Successfully');
       }
