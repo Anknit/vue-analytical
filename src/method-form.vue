@@ -93,10 +93,13 @@
                     <div class="col-xs-7">
                       <div class="form-group">
                         <select class="form-control" v-model="material.name" required="true">
-                          <option value="steel">Stainless Steel</option>
+                          <option v-for="option in materialOptions" :key="option.value" :value="option.value">
+                            {{option.label}}
+                          </option>
+                          <!-- <option value="steel">Stainless Steel</option>
                           <option value="glass">Glass</option>
                           <option value="teflon">Teflon</option>
-                          <option value="plastic">Plastic</option>
+                          <option value="plastic">Plastic</option> -->
                         </select>
                       </div>
                     </div>
@@ -109,13 +112,28 @@
                       <span class="glyphicon glyphicon-remove" role="button" @click="removeMoc('swab', index)"></span>
                     </div>
                   </div>
+                  <div class="row" v-if="form[form.residueType].swab.showCreateMoc">
+                    <div class="col-xs-7">
+                      <div class="form-group">
+                        <input type="text" class="form-control" v-model="form[form.residueType].swab.newMoc" required="true" />
+                      </div>
+                    </div>
+                    <div class="col-xs-5">
+                      <button type="button" class="btn btn-link btn-theme" @click="saveMoc('swab')">
+                        Save
+                      </button>
+                      <button type="button" class="btn btn-link btn-theme" @click="cancelMoc('swab')">
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
                   <div>
                     <button type="button" class="btn btn-link btn-theme" @click="addMoc('swab')">
                       <span class="glyphicon glyphicon-remove-circle transform-add-icon"></span>
                       Add another
                     </button>
                     <span>or</span>
-                    <button type="button" class="btn btn-link btn-theme" @click="addMoc('swab')">
+                    <button type="button" class="btn btn-link btn-theme" @click="createMoc('swab')">
                       Create a new MOC
                     </button>
                   </div>
@@ -168,10 +186,13 @@
                     <div class="col-xs-7">
                       <div class="form-group">
                         <select class="form-control" v-model="material.name" required="true">
-                          <option value="steel">Stainless Steel</option>
+                          <option v-for="option in materialOptions" :key="option.value" :value="option.value">
+                            {{option.label}}
+                          </option>
+                          <!-- <option value="steel">Stainless Steel</option>
                           <option value="glass">Glass</option>
                           <option value="teflon">Teflon</option>
-                          <option value="plastic">Plastic</option>
+                          <option value="plastic">Plastic</option> -->
                         </select>
                       </div>
                     </div>
@@ -184,13 +205,28 @@
                       <span class="glyphicon glyphicon-remove" role="button" @click="removeMoc('rinse', index)"></span>
                     </div>
                   </div>
+                  <div class="row" v-if="form[form.residueType].rinse.showCreateMoc">
+                    <div class="col-xs-7">
+                      <div class="form-group">
+                        <input type="text" class="form-control" v-model="form[form.residueType].rinse.newMoc" required="true" />
+                      </div>
+                    </div>
+                    <div class="col-xs-5">
+                      <button type="button" class="btn btn-link btn-theme" @click="saveMoc('rinse')">
+                        Save
+                      </button>
+                      <button type="button" class="btn btn-link btn-theme" @click="cancelMoc('rinse')">
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
                   <div>
                     <button type="button" class="btn btn-link btn-theme" @click="addMoc('rinse')">
                       <span class="glyphicon glyphicon-remove-circle transform-add-icon"></span>
                       Add another
                     </button>
                     <span>or</span>
-                    <button type="button" class="btn btn-link btn-theme" @click="addMoc('rinse')">
+                    <button type="button" class="btn btn-link btn-theme" @click="createMoc('rinse')">
                       Create a new MOC
                     </button>
                   </div>
@@ -295,10 +331,13 @@
                     <div class="col-xs-7">
                       <div class="form-group">
                         <select class="form-control" v-model="material.name" required="true">
-                          <option value="steel">Stainless Steel</option>
+                          <option v-for="option in materialOptions" :key="option.value" :value="option.value">
+                            {{option.label}}
+                          </option>
+                          <!-- <option value="steel">Stainless Steel</option>
                           <option value="glass">Glass</option>
                           <option value="teflon">Teflon</option>
-                          <option value="plastic">Plastic</option>
+                          <option value="plastic">Plastic</option> -->
                         </select>
                       </div>
                     </div>
@@ -311,13 +350,28 @@
                       <span class="glyphicon glyphicon-remove" role="button" @click="removeMoc('swab', index)"></span>
                     </div>
                   </div>
+                  <div class="row" v-if="form[form.residueType].swab.showCreateMoc">
+                    <div class="col-xs-7">
+                      <div class="form-group">
+                        <input type="text" class="form-control" v-model="form[form.residueType].swab.newMoc" required="true" />
+                      </div>
+                    </div>
+                    <div class="col-xs-5">
+                      <button type="button" class="btn btn-link btn-theme" @click="saveMoc('swab')">
+                        Save
+                      </button>
+                      <button type="button" class="btn btn-link btn-theme" @click="cancelMoc('swab')">
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
                   <div>
                     <button type="button" class="btn btn-link btn-theme" @click="addMoc('swab')">
                       <span class="glyphicon glyphicon-remove-circle transform-add-icon"></span>
                       Add another
                     </button>
                     <span>or</span>
-                    <button type="button" class="btn btn-link btn-theme" @click="addMoc('swab')">
+                    <button type="button" class="btn btn-link btn-theme" @click="createMoc('swab')">
                       Create a new MOC
                     </button>
                   </div>
@@ -390,10 +444,13 @@
                     <div class="col-xs-7">
                       <div class="form-group">
                         <select class="form-control" v-model="material.name" required="true">
-                          <option value="steel">Stainless Steel</option>
+                          <option v-for="option in materialOptions" :key="option.value" :value="option.value">
+                            {{option.label}}
+                          </option>
+                          <!-- <option value="steel">Stainless Steel</option>
                           <option value="glass">Glass</option>
                           <option value="teflon">Teflon</option>
-                          <option value="plastic">Plastic</option>
+                          <option value="plastic">Plastic</option> -->
                         </select>
                       </div>
                     </div>
@@ -406,13 +463,28 @@
                       <span class="glyphicon glyphicon-remove" role="button" @click="removeMoc('rinse', index)"></span>
                     </div>
                   </div>
+                  <div class="row" v-if="form[form.residueType].rinse.showCreateMoc">
+                    <div class="col-xs-7">
+                      <div class="form-group">
+                        <input type="text" class="form-control" v-model="form[form.residueType].rinse.newMoc" required="true" />
+                      </div>
+                    </div>
+                    <div class="col-xs-5">
+                      <button type="button" class="btn btn-link btn-theme" @click="saveMoc('rinse')">
+                        Save
+                      </button>
+                      <button type="button" class="btn btn-link btn-theme" @click="cancelMoc('rinse')">
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
                   <div>
                     <button type="button" class="btn btn-link btn-theme" @click="addMoc('rinse')">
                       <span class="glyphicon glyphicon-remove-circle transform-add-icon"></span>
                       Add another
                     </button>
                     <span>or</span>
-                    <button type="button" class="btn btn-link btn-theme" @click="addMoc('rinse')">
+                    <button type="button" class="btn btn-link btn-theme" @click="createMoc('rinse')">
                       Create a new MOC
                     </button>
                   </div>
@@ -442,10 +514,12 @@ export default {
   data () {
     return {
       form: {},
+      materialOptions:[],
     }
   },
   mounted(){
     this.resetForm();
+    this.setMaterialOptions()
   },
   methods:{
     resetForm(){
@@ -511,6 +585,35 @@ export default {
     setFormData(data){
       this.form = {}
       this.form = JSON.parse(JSON.stringify(data))
+    },
+    setMaterialOptions(){
+      if(window.localStorage){
+        let materialOptions = window.localStorage.getItem('materialOptions')
+        this.materialOptions = JSON.parse(materialOptions)
+      }
+    },
+    createMoc(type){
+      var residueType = this.form.residueType;
+      Vue.set(this.form[residueType][type],'showCreateMoc',true)
+    },
+    saveMoc(type){
+      var residueType = this.form.residueType;
+      if(!this.form[residueType][type].newMoc){
+        alert('Please enter material name')
+        return
+      }
+      this.materialOptions.push({
+        value:this.form[residueType][type].newMoc.trim(),
+        label:this.form[residueType][type].newMoc.trim(),
+      })
+      if(window.localStorage){
+        window.localStorage.setItem('materialOptions', JSON.stringify(this.materialOptions))
+      }
+      this.form[residueType][type].showCreateMoc = false
+    },
+    cancelMoc(type){
+      var residueType = this.form.residueType;
+      this.form[residueType][type].showCreateMoc = false
     }
   }
 }

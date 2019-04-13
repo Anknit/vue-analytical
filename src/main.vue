@@ -28,6 +28,7 @@ export default {
   name: 'app',
   mounted(){
     this.getSavedMethods()
+    this.setDefaultMaterialOptions()
   },
   components: {
     MethodForm
@@ -52,6 +53,27 @@ export default {
     updateMethods(data){
       if(data){
         Vue.set(this.analyticalMethods, data.analyticalId, data)
+      }
+    },
+    setDefaultMaterialOptions(){
+      if(window.localStorage){
+        let materialOptions = window.localStorage.getItem('materialOptions')
+        if(!materialOptions){
+          let defaultMaterialOptions = [{
+            label:'Stainless Steel',
+            value:'steel'
+          },{
+            label:'Glass',
+            value:'glass'
+          },{
+            label:'Teflon',
+            value:'teflon'
+          },{
+            label:'Plastic',
+            value:'plastic'
+          }]
+          window.localStorage.setItem('materialOptions', JSON.stringify(defaultMaterialOptions))
+        }
       }
     }
   }
